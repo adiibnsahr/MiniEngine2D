@@ -1,7 +1,12 @@
 #include <iostream>
+#include <memory>
+#include <SFML/Graphics.hpp>
+
+#include "framework/Application.h"
 
 int main()
 {
-    std::cout << "Hello!";
-    return 0;
+    // Allocating on the heap
+    std::unique_ptr<MiniEngine::Application> app = std::make_unique<MiniEngine::Application>();
+    app->Run();
 }
